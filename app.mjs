@@ -5,11 +5,11 @@ export function mount(host) {
   element.className = 'window-content webos-irc';
   const root = element.attachShadow({mode: 'open'});
   root.innerHTML = `<link rel="stylesheet" href="${new URL('./webos.css', import.meta.url)}">
-    <form class="connection"><label>Nickname <input name="nick" maxlength="24" required></label>
+    <form class="connection"><label>Nickname <input name="nick" maxlength="24" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="go" required></label>
     <button>Connect</button></form><p role="status"></p>
-    <form class="join"><label>Channel <input name="channel" placeholder="#channel" required></label>
+    <form class="join"><label>Channel <input name="channel" placeholder="#channel" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="go" required></label>
     <button>Join</button></form><ol role="log" aria-label="Conversation"></ol>
-    <form class="compose"><label>Message <input name="message" autocomplete="off" required></label>
+    <form class="compose"><label>Message <input name="message" autocomplete="off" enterkeyhint="send" required></label>
     <button>Send</button></form>`;
   const connection = root.querySelector('.connection');
   const join = root.querySelector('.join');
