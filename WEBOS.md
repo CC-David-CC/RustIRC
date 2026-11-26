@@ -2,7 +2,7 @@
 
 The WebOS branch adds a browser client in `app.mjs`. Each call to `mount(host)` returns `{element, dispose}` synchronously. Each window owns its connection, nickname, active channel and message buffer.
 
-The host supplies `irc.openChannel({signal})`, which returns an IRCv3 text WebSocket in CONNECTING or OPEN state. A production host must authenticate the WebOS session and authorize the configured owner subject before opening the server-selected TLS destination. The client registers a nickname, handles PING, joins a channel and exchanges messages. The standalone test supplies a private loopback transport. Desktop registration and production authorization are pending.
+The host supplies `irc.openChannel({signal})`, which returns an IRCv3 text WebSocket in CONNECTING or OPEN state. A production host must authenticate the WebOS session and authorize the configured owner subject before opening the server-selected TLS destination. The client registers a nickname, handles PING, joins a channel and exchanges messages. The standalone test supplies a private loopback transport. The current WebOS launcher uses the browser simulation in `webos-demo.mjs`. See the [physical phone walkthrough](docs/webos-qa/PHONE.md).
 
 ## Browser check
 
